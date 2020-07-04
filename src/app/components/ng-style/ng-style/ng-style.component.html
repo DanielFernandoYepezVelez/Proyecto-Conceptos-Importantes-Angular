@@ -1,0 +1,12 @@
+<p [ngStyle]="{'font-size': '2rem', 'color': 'red'}">Hola Mundo Desde Una Etiqueta (Ng-Style)</p>
+
+<p [style.fontSize.rem]="tamano" [ngStyle]="{'color': colorVariable}">Estilo Con Una Variable Tipo Number Desde El .ts</p>
+
+<p [style.fontSize.px]="'20'" [ngStyle]="{'color': 'blue'}">Estilo Con Un Valor Directo Y Medida De PX</p>
+
+<p [style.fontSize]="'40px'" [ngStyle]="{'color': 'yellow'}">Estilo Con Un Valor Directo</p>
+
+<div class="d-flex justify-content-center">
+    <button (click)="tamano = tamano + .5" class="btn btn-outline-primary mr-1"> <i class="fa fa-plus"></i> </button>
+    <button (click)="tamano = tamano - .5" class="btn btn-outline-danger ml-1"> <i class="fa fa-minus"></i> </button>
+</div>

@@ -1,0 +1,41 @@
+<div [ngClass]="'alert-danger'" class="alert" role="alert">
+    <h4>
+        Angular Hace Un Append O Adjunta El NgClass A Las Clases Existentes</h4>
+    <p>Bienvenido A Los Estilos Con NgClass</p>
+</div>
+
+<div [ngClass]="alerta" class="alert" role="alert">
+    <h4>Estilos De Un NgClass Con Una Variable Desde El .ts (alerta)</h4>
+    <p>Bienvenido A Los Estilos Con NgClass</p>
+</div>
+
+<div [ngClass]="alertaDos" class="alert" role="alert">
+    <h4>Estilos DINAMICOS De Un NgClass Con Una Variable Desde El .ts (alertaDos)</h4>
+    <p>La Modificaremos De Forma Dinamica Por Medio De Botones</p>
+</div>
+
+<button (click)="uno($event)" type="button" class="btn btn-outline-success">Success</button>
+<button (click)="dos($event)" type="button" class="btn btn-outline-info">Information</button>
+
+<h2 [ngClass]="{'text-danger': true, 'mt-3': true}">Condicion TRUE Para El NgClasss(SE MUESTRA)</h2>
+
+<h2 [ngClass]="{'text-success': false}">Condicion FALSE Para El NgClasss(NO SE MUESTRA)</h2>
+
+<h2 [ngClass]="{'text-info': propiedades.entrega, 'text-danger': !propiedades.entrega}">Pasando Un Objeto Literal Como Variables Booleanas</h2>
+
+<h2 [ngClass]="{'personal': propiedades.entrega}">Pasando Una Clase Personal Para Que Se Aplique En El NgClass</h2>
+
+<input class="btn" [ngClass]="{'btn-primary': propiedades.button, 'mt-3': propiedades.button, 'btn-danger': !propiedades.button}" type="button" value="Cambiar Color" (click)="cambiarColor($event)">
+
+<div [ngClass]="{'personal': !propiedades.button}">
+    <p>Fondo Gracias Al Objeto Literal De Button</p>
+</div>
+
+<div [ngClass]="{'mt-3': true}">
+    <h2>Proceso Asincrono Con NgClass</h2>
+    <button (click)="ejecutar($event)" class="btn btn-primary" [disabled]="loading">
+      <i class="fa" [ngClass]="{'fa-refresh fa-spin': loading, 'fa-save': !loading}"></i>
+       <span *ngIf="!loading"> Guardando Archivos</span>
+       <span *ngIf="loading"> Espere Por Favor</span>
+    </button>
+</div>
